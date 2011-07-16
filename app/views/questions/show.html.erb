@@ -1,6 +1,6 @@
 
 <p><%= @question.body %></p>
-<p>By <%= @question.user.email %></p>
+<p>By <%= @question.user.username %></p>
 
 <p>
   <%= link_to 'Edit', edit_question_path(@question) %> |
@@ -12,7 +12,7 @@
 <% @question.answers.each do |answer| %>
   <blockquote>
     <p><%= answer.body %></p>
-    <p><i>By <%= answer.user.email %></i></p>
+    <p><i>By <%= answer.user.username %></i></p>
     <p>Score: <%= answer.score %></p>
     <% if user_signed_in? %>
       <%= button_to 'Vote Up', vote_up_path(answer) %>
